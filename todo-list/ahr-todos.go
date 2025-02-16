@@ -17,17 +17,12 @@ var todos []Todo
 // Define a function to print the menu
 func menu() {
 	fmt.Println("############### Welcome to the ***AHR*** Todos App ###############")
-	fmt.Println("1. Create a new todo")
-	fmt.Println("2. List all todos")
-	fmt.Println("3. Update a todo")
-	fmt.Println("4. Delete a todo")
-	fmt.Println("0. Exit")
-
+	fmt.Printf("%s -> create todo, %s -> list todos, %s -> update todo, %s -> delete todo, %s exit\n", "c", "a", "e", "d", "q")
 }
 
 // Define a function to take the menu option from the user
-func takeMenuOption() int {
-	var option int
+func takeMenuOption() string {
+	var option string
 	fmt.Print("Enter your choice: ")
 	fmt.Scanln(&option)
 	return option
@@ -135,17 +130,15 @@ func app() {
 		menu()
 		option := takeMenuOption()
 		switch option {
-		case 1:
+		case "c":
 			createTodo()
-			// fmt.Print("\033[H\033[2J")
-			// menu()
-		case 2:
+		case "a":
 			listTodos()
-		case 3:
+		case "e":
 			updateTodo()
-		case 4:
+		case "d":
 			deleteTodo()
-		case 0:
+		case "q":
 			exit()
 			return
 		default:
